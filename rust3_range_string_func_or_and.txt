@@ -28,8 +28,19 @@ pub fn main() {
     msg = msg.to_uppercase();
     println!("{msg}");
     
-    println!("finding Result in {:?}", msg.find("Gorgeus")); // finding
+    println!("\n finding Result in {:?} ...", msg.find("Hello")); // finding
     println!("Splitting string into {:?}", msg.split(" ")); // split
+    
+    println!("\n Finding matches {:?}...", msg.matches("Hello").count()); // finding matches
+    println!("\n Finding index {:?}", msg.match_indices("Rust")); // finding index
+    
+    println!("\nCapacity demo:");
+    println!("  Initial capacity: {}", msg.capacity());  // total number of bytes allocated in memory
+    println!("  Initial length: {}", msg.len());
+    
+    while let Some(ch) = msg.pop() {
+        println!("  Popped: '{}', Remaining: '{}'", ch, msg);
+    }
     
     // 1..............................................
     for i in (Range{start: 1, end: 20}) {
