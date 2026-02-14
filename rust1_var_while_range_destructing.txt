@@ -1,0 +1,70 @@
+#[allow(unused_variables)]
+
+pub fn main() {
+    println!("Hello World");
+    
+    let x = "hello ...";
+    let y = 123;
+    let z = 123.11;
+    let gender = true;
+    let arr = [1,2,3,4,5];
+    let mut vect = vec![1,2,3,4,5];
+    println!("x : {x}, y : {y}, z : {z}");
+    
+    vect.push(122);
+    
+    println!("arr: {:?}", arr);
+    
+    println!("vect: {:?}", vect);
+    
+    
+    // infinite loop
+    let mut counter: i8 = 0; // 2^8, -128 to 127
+    loop{
+        println!("helllooo....");
+        counter += 1;
+        
+        if counter == 2 {
+            break;
+        }
+    }
+    
+    // while loop
+    while counter < 10 {
+        println!("while loo: {counter}");
+        counter += 1;
+    }
+    
+    
+    println!("counter is {counter}");
+    
+    
+    // tuples
+    let t = (1,2,3,4,5);
+    println!("t : {:?}", t);
+    
+    
+    // destructuring
+    let (mut x,y,z) = (1_000, 2_000, 3_000);
+    println!("x: {x}, y: {y}, z: {z} \n");
+    
+    
+    (x,..) = (-100, -200, -300);
+    println!("x: {x}, y: {y}, z: {z}");
+    
+    
+    for i in 1..=100 {  // this includes 100
+        println!("i is {i}")
+    }
+    
+    for i in 'a'..='z' {
+        println!("i is {i}")
+    }
+    
+    
+    for i in "Deepanshu Mehta".chars() {  
+        println!("i is {i}, ascii value: {}", i as  u8)
+    }
+    
+}
+

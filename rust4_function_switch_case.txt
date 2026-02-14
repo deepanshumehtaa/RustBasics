@@ -1,0 +1,39 @@
+#[allow(unused_variables)]
+
+
+// import statement
+// use std::ops::{Range};
+
+fn sum(x: i16, y: i16) -> (i16, i16) {
+    let sum_ = x + y;
+    println!("sum_: {sum_}");
+    return (x+y, x*y);
+}
+
+fn no_return_fn() -> () {
+    let _ans = "bla bla";
+}
+
+pub fn main() {
+    no_return_fn();
+    
+    let ans = sum(100, 11);
+    println!("Hello World, {:?}", ans);
+    
+    // panic!("some panic"); // raise Exception()
+    // todo!("kro bhai...."); // not yet implemented: kro bhai....
+    // unimplemented!("Un implemented bhai....");  // not implemented: Un implemented bhai....
+    // unreachable!("nai aya....");  // internal error: entered unreachable code: nai aya...
+    
+    let case: u64 = 10;
+    let matched_val = match case {
+        0 => "zero",
+        1 => "one",
+        10 => "ten",
+        _ => "nai yr",
+    };
+    
+    println!("matched_val: {matched_val}");
+}
+
+

@@ -1,0 +1,64 @@
+#[allow(unused_variables)]
+
+
+// import statement
+use std::ops::{Range};
+
+
+// &str vs String
+// `&str` is fixed-size and usually points to memory that can't grow [IMMUTABLE]
+// `String` is a buffer on the heap that can be expanded. [Mutable]
+
+
+fn my_func(st: &str) -> String{
+    println!("The string is `{st}`");
+    let mut st: String = st.to_string();
+    st.push_str(" ooooo");
+    return st;
+}
+
+
+
+pub fn main() {
+    let mut msg = String::new();
+    msg.push_str("Hello World");  // for word, did'nt work for single char
+    msg.push('!');  // ONLY for single char
+    msg.insert_str(5, " Beautiful");
+    msg = msg.replace("Beautiful", "Gorgeus"); // `replace` will replace all the occurance
+    msg = msg.to_uppercase();
+    println!("{msg}");
+    
+    println!("finding Result in {:?}", msg.find("Gorgeus")); // finding
+    println!("Splitting string into {:?}", msg.split(" ")); // split
+    
+    // 1..............................................
+    for i in (Range{start: 1, end: 20}) {
+        println!("i in range {i}");
+    }
+    
+    // 2 ..............................................
+    let vals = 1..10;
+    println!("{:?}", vals);
+    for val in vals{
+        println!("val in vals {}", val);
+    }
+    
+    let (true_val, false_val) = (true, false);
+    
+    // AND
+    let and_val = true_val && false_val;
+    println!("bool with and {and_val}");
+    
+    // OR
+    let or_val = true_val || false_val;
+    println!("bool with and {or_val}");
+    
+    
+    let return_value = my_func("Mehta"); // string is immutable and formed using `&str`
+    println!("return_value: {return_value}");
+    
+    
+    let xx: u32 = 5u32;
+    println!("xx is {xx}");  // xx is 5
+    
+}
